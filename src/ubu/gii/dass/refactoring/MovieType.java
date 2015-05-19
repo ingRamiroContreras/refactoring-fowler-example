@@ -1,9 +1,11 @@
 package ubu.gii.dass.refactoring;
 
-public class MovieType {
+public abstract class MovieType {
 
 	public MovieType() {
 		super();
 	}
+	
+	public abstract int getTypeCode();
 
 }
