@@ -18,7 +18,7 @@ public class Movie {
 
 	public Movie(String title, int priceCode) {
 		_title = title;
-		_priceCode = priceCode;
+		setPriceCode(priceCode);
 	}
 
 	public int getPriceCode() {
@@ -27,6 +27,17 @@ public class Movie {
 
 	public void setPriceCode(int arg) {
 		_priceCode = arg;
+		switch(arg){
+			case MovieType.CHILDRENS:
+				_movieType = new Children();
+				break;
+			case MovieType.NEW_RELEASE:
+				_movieType = new NewRelease();
+				break;
+			case MovieType.REGULAR:
+				_movieType = new Regular();
+				break;
+		}
 	}
 
 	public String getTitle() {
